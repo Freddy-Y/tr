@@ -48,14 +48,9 @@
             }
     </style>
 </head>
-<!--
-<body id="page1" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-2" data-genuitec-path="/teachingresource/WebRoot/index.jsp">
--->
+
 <body>
-<!--
-	<div class="extra" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-2" data-genuitec-path="/teachingresource/WebRoot/index.jsp">
-    
--->
+
 <%
 	//List<String> info=(List<String>)request.getAttribute("info");
 %>
@@ -74,17 +69,9 @@
             		<jsp:include page="login.jsp" flush="true"/>     
             	
             	<%	}	%>
-            	
-            	
-            	
-                
             </div>
         </div>
-    </div>
-    
-    <!-- <div> -->
-        <div class="extra" style="text-align:center"><!--做种-->
-            <div>   <!--css轮番显示 class="row-bot"-->
+        <div style="float:center">   <!--css轮番显示 class="row-bot"-->
                 <div>
                     <div class="carousel-container">
                         <div id="carousel"><!--fanzhuan -->
@@ -101,6 +88,11 @@
                     </div> 
                 </div>
             </div><!--css轮番显示-->
+    </div>
+    
+    <!-- <div> -->
+        <div class="extra" style="text-align:center"><!--做种-->
+            
 
 
             <div class="left" style="border: 2px dotted blue;height:600px;width:900px"><!--简介-->
@@ -134,7 +126,19 @@
     <div>
         <%@ include file="foot.jsp"%>
     </div>
-	
+<%
+	String info=(String)request.getAttribute("massageinfo");
+ %>
+ 
+ <%
+	if(info!=null||"".equals(info)){
+%>
+	<script type="text/javascript">
+		alert("<%=info%>");	
+	</script>	
+<%
+	}
+ %>
 <!--------------------------------------------------------------------------- -->
 	<script type="text/javascript"> Cufon.now(); </script>
 </body>

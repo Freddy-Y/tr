@@ -52,7 +52,9 @@ public class MassageDAOProxy implements IMassageDAO{
 	public List<Massage> findAll() throws Exception {
 		List<Massage> all=new ArrayList();
 		try{
-			all=this.dao.findAll();
+			if(this.dao.findAll()!=null){
+				all=this.dao.findAll();
+			}
 		}catch(Exception e){
 			throw e;
 		}finally{

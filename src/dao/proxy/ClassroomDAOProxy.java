@@ -22,11 +22,12 @@ public class ClassroomDAOProxy implements IClassroomDAO{
 
 	public Classroom findByid(String roomid,String building) throws Exception {
 		// TODO Auto-generated method stub
-		Classroom classroom=new Classroom();
+		Classroom classroom=null;
 		try{
 			System.out.println("教室查询进入");
 			if(this.dao.findByid(roomid,building)!=null){
 				classroom=this.dao.findByid(roomid,building);
+				System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+classroom.getBuilding());
 			}
 		}catch(Exception e){
 			throw e;

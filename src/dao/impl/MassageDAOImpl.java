@@ -22,7 +22,7 @@ public class MassageDAOImpl implements IMassageDAO{
 		// TODO Auto-generated method stub
 		boolean flag=false;
 		try{
-			String sql="insert into massage values(??,curdate(),?)";
+			String sql="insert into massage values(?,?,curdate(),?)";
 			this.pst=this.con.prepareStatement(sql);
 			this.pst.setString(1, massage.getMassageid());
 			this.pst.setString(2, massage.getMcontent());
@@ -76,9 +76,9 @@ public class MassageDAOImpl implements IMassageDAO{
 			String sql="select * from massage";
 			this.pst=this.con.prepareStatement(sql);
 			ResultSet rs=this.pst.executeQuery();
-			Massage massage=null;
+			//Massage massage=null;
 			while(rs.next()){
-				massage=new Massage();
+				Massage massage=new Massage();
 				massage.setMassageid(rs.getString(1));
 				massage.setMcontent(rs.getString(2));
 				massage.setDate(rs.getDate(3));
@@ -92,7 +92,7 @@ public class MassageDAOImpl implements IMassageDAO{
 				this.pst.close();
 			}
 		}
-		return null;
+		return all;
 	}
 
 }

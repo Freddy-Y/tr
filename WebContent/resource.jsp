@@ -35,23 +35,51 @@
 <body>
 	
    	<!--==============================header=================================-->
-        <div>
+        <div><!-- 	头的开始布局 -->
         	<jsp:include page="header.jsp" flush="true"/>
-        	<div class="right">   <!--右面登陆界面-->
-            	<div class="right" style="padding-top:45px;">
-            	<% if(session.getAttribute("stuid")==null){	%>
+        	<div style="float:right">   <!--右面登陆界面-->
+            <div class="right" style="padding-top:45px;">
+            	<% if(session.getAttribute("stuid")!=null||session.getAttribute("personid")!=null){	%>
             	
-            		<jsp:include page="login.jsp" flush="true"/>
+            		<jsp:include page="SLoginSuccess.jsp" flush="true"/>  
             		
             	<% 	}else{	%>
-            		<jsp:include page="SLoginSuccess.jsp" flush="true"/>        
-
+            		
+            		<jsp:include page="login.jsp" flush="true"/>     
             	
             	<%	}	%>
-            	
-           		</div>
-        	</div><!--右面登陆界面-->
-    	</div>
+            </div>
+        	</div>
+<%	if(session.getAttribute("personid")!=null){		//老师文件上传，显示老师之前的文件，添加文件的表单
+%>
+			<div style="float:left;background-color:#99ccff;height:700px;width:300px;">
+				<form action="UploadServlet" method="post" enctype="multipart/form-data">  
+    			user name<input type="text" name="username"/> <br/>  
+  				请选择上传文件:<input type="file" name="f1"/><br/>  
+    				<input type="file" name="f2"/><br/>  
+    				<input type="submit" value="save"/>  
+  				</form>
+			</div>
+<%
+	}
+%>		
+<%	 if(session.getAttribute("personid")==null&&session.getAttribute("stuid")==null){		//老师文件上传，显示老师之前的文件，添加文件的表单
+%>
+			<div style="float:left;background-color:#99ccff;height:700px;width:300px;">
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+
+			
+<%
+	}
+%>	
+
+					
+			
+    	</div><!-- 	头的结尾布局 -->
         
     <!--==============================content================================-->
       

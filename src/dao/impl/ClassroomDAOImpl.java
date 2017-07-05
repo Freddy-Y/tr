@@ -24,8 +24,9 @@ public class ClassroomDAOImpl implements IClassroomDAO{
 			this.pst.setString(1,roomid);
 			this.pst.setString(2, building);
 			ResultSet rs=this.pst.executeQuery();
-			classroom=new Classroom();
+			
 			while(rs.next()){
+				classroom=new Classroom();
 				classroom.setRoomid(rs.getString(1));
 				classroom.setBuilding(rs.getString(2));
 				classroom.setState(rs.getString(3));

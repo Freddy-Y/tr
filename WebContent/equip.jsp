@@ -37,20 +37,19 @@
     	<!--==============================header=================================-->
         <div>
         	<jsp:include page="header.jsp" flush="true"/>
-        	<div class="right">   <!--右面登陆界面-->
-            	<div class="right" style="padding-top:45px;">
-            	<% if(session.getAttribute("stuid")==null){	%>
+        	<div style="float:right">   <!--右面登陆界面-->
+            <div class="right" style="padding-top:45px;">
+            	<% if(session.getAttribute("stuid")!=null||session.getAttribute("personid")!=null){	%>
             	
-            		<jsp:include page="login.jsp" flush="true"/>
+            		<jsp:include page="SLoginSuccess.jsp" flush="true"/>  
             		
             	<% 	}else{	%>
-            		<jsp:include page="SLoginSuccess.jsp" flush="true"/>
-
+            		
+            		<jsp:include page="login.jsp" flush="true"/>     
             	
             	<%	}	%>
-            	
-           		</div>
-        	</div><!--右面登陆界面-->
+            </div>
+        </div>
     	</div>
         
         <!--==============================content================================-->

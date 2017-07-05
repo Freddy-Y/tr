@@ -98,7 +98,7 @@ body {
 		<tr>
 			<td width="559">
 				<form name="ThisForm" method="POST" action="<%= request.getContextPath()%>/ALoginServlet">
-					<table width="410" height="198" border="0" align="right"
+					<table width="350" height="200" border="0" align="right"
 						cellpadding="0" cellspacing="0">
 						<tr>
 							<td height="10" colspan="2"></td>
@@ -116,7 +116,7 @@ body {
 						</tr>
 						<tr>
 							<td width="54" height="22" valign="bottom"><span
-								class="STYLE15" style="FONT-SIZE: 10pt;COLOR:BLACK">用户名：</span></td>
+								class="STYLE15" style="FONT-SIZE: 10pt;COLOR:BLACK">账号：</span></td>
 							<td width="356" valign="bottom"><input name="username"
 								type="text" class="input2"
 								onMouseOver="this.style.background='#F0DAF3';"
@@ -127,7 +127,7 @@ body {
 						</tr>
 						<tr>
 							<td height="31" colspan="2" valign="top" class="STYLE15" style="FONT-SIZE: 10pt;COLOR:BLACK">
-								密&nbsp;码： <input name="usrpassword" type="password" size="21"
+								密码： <input name="usrpassword" type="password" size="21"
 								class="input2" align="bottom"
 								onMouseOver="this.style.background='#F0DAF3';"
 								onMouseOut="this.style.background='#FFFFFF'">
@@ -138,13 +138,12 @@ body {
 						</tr>
 						<tr>
 							<td height="31" colspan="2" valign="top" class="STYLE15" style="FONT-SIZE: 10pt;COLOR:BLACK">
-								教学楼： <select name="num" class="input2" align="bottom">
+								单位： <select name="num" class="input2" align="bottom">
+										<option value="#">--请选择管理员教学楼--</option>
 										<option value="一教">一教</option>
 										<option value="二教">二教</option>
 										<option value="三教">三教</option>
 										<option value="四教">四教</option>
-										<option></option>
-										<option></option>
 									</select>
 							</td>
 						</tr>

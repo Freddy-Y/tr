@@ -7,18 +7,14 @@
                     <div class="wrapper">
                         <article class="grid_8">
                             <h4>告诉我们您的建议</h4>
-                            <form id="contact-form" method="post">
-                                <fieldset>
-                                    <textarea onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">留言需求</textarea>
+                            <form action="AddMassageServlet"  method="post" id="contact-form"><!--  id="contact-form" -->
+                                    <textarea name="massage" rows="10" cols="60">留言需求</textarea><!-- onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''"  -->
                                     <div class="buttons">
-                                        <a href="#" onClick="document.getElementById('contact-form').reset()">重置</a>
-                                        <a href="#" onClick="document.getElementById('contact-form').submit()">发送</a>
-                                    </div>											
-                                </fieldset>           
+                                        <input type="submit" value="提交">
+                                    </div>											          
                             </form>
                         </article>
-                        <div class="copyright">ysu.teachingresource © 2017</div>
-                        <a href="admin/login.jsp">|管理员登陆</a>
+                        <div class="copyright">ysu.teachingresource © 2017<a href="admin/login.jsp">|管理员登陆</a></div>
                     </div>
                 </div>
             </div>

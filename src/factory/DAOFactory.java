@@ -6,6 +6,7 @@ import dao.IAdminDAO;
 import dao.IBorrowDAO;
 import dao.IClassroomDAO;
 import dao.IEquipDAO;
+import dao.IMassageDAO;
 import dao.proxy.*;
 
 public class DAOFactory {
@@ -42,6 +43,10 @@ public class DAOFactory {
 	
 	public static IRepairDAO getRepairDAOInstance(){
 		return new RepairDAOproxy();
+	}
+	
+	public static IMassageDAO getMassageDAOInstance(){
+		return new MassageDAOProxy();
 	}
 
 		
